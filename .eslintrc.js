@@ -1,14 +1,4 @@
-const { addBabelPlugin, override } = require('customize-cra');
-
-module.exports = override(
-  addBabelPlugin([
-    'babel-plugin-root-import',
-    {
-      rootPathSuffix: 'src',
-    },
-  ])
-);
-amodule.exports = {
+module.exports = {
   env: {
     es6: true,
     jest: true,

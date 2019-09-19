@@ -64,7 +64,7 @@ export const ListItem = styled.li`
   }
 `;
 
-export const A = styled.a`
+export const Icon = styled.i`
   color: #ffffff;
   ${ListItem}.active & {
     color: #44a9fe;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, Logo, List, ListItem, A } from './styles';
+import { Container, Logo, List, ListItem, Icon } from './styles';
 
 function Nav() {
   return (
@@ -10,16 +10,12 @@ function Nav() {
       <List>
         <ListItem className="active">
           <Link to="/">
-            <A>
-              <i className="fas fa-globe-americas" />
-            </A>
+            <Icon className="fas fa-globe-americas" />
           </Link>
         </ListItem>
         <ListItem>
           <Link to="/catch">
-            <A>
-              <i className="fas fa-suitcase" />
-            </A>
+            <Icon className="fas fa-suitcase" />
           </Link>
         </ListItem>
       </List>
