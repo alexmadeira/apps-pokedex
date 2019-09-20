@@ -47,10 +47,17 @@ export const ImageBox = styled.div`
   flex: 1;
   flex-direction: column;
   border-radius: 6px;
+  min-height: 280px;
 `;
 
 export const LoadingImage = styled.img`
   width: 200px;
+  position: absolute;
+  transition: all 500ms linear;
+  z-index: 2;
+  &.load {
+    opacity: 0;
+  }
 `;
 
 export const PokemonImage = styled.img`

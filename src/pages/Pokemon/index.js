@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import api from '~/services/api';
+import { setLocalStorage, getLocalStorage } from '~/services/localStorage';
 
 import {
   Container,
@@ -31,6 +32,8 @@ import {
 function Pokemon({ match: { params } }) {
   const { slug } = params;
   const [PokemonData, setPokemonData] = useState(null);
+  const [Catchs, setCatchs] = useState([]);
+  const [Catch, setCatch] = useState(false);
   const [Specie, setSpecie] = useState(null);
 
   useEffect(() => {
@@ -50,14 +53,82 @@ function Pokemon({ match: { params } }) {
       getSpecie();
     }
   }, [PokemonData]);
+
+  useEffect(() => {
+    const StorageCatchs = getLocalStorage('@alex-madeira-pokedex/CATCHS');
+    setCatchs(StorageCatchs || []);
+  }, [Catch]);
+
+  useEffect(() => {
+    if (PokemonData) {
+      const CatchThis = getLocalStorage(
+        `@alex-madeira-pokedex/CATCH/${PokemonData.name}`
+      );
+      setCatch(!!CatchThis);
+    }
+  }, [PokemonData, Catch]);
+
+  function catchPokermon() {
+    const localStoreCatchs = {
+      name: '@alex-madeira-pokedex/CATCHS',
+      value: [...new Set([...Catchs, PokemonData.name])],
+      expiry: 24 * 60 * 60 * 1000,
+    };
+
+    const localStoreCatch = {
+      name: `@alex-madeira-pokedex/CATCH/${PokemonData.name}`,
+      value: PokemonData.name,
+      expiry: 24 * 60 * 60 * 1000,
+    };
+
+    setCatch(true);
+    setLocalStorage(localStoreCatchs);
+    setLocalStorage(localStoreCatch);
+  }
+
+  function dropPokemon() {
+    const DropCatch = Catchs.filter(pokemon => pokemon !== PokemonData.name);
+
+    const localStoreCatchs = {
+      name: '@alex-madeira-pokedex/CATCHS',
+      value: DropCatch,
+      expiry: 24 * 60 * 60 * 1000,
+    };
+    const localStoreCatch = {
+      name: `@alex-madeira-pokedex/CATCH/${PokemonData.name}`,
+      value: PokemonData.name,
+      expiry: 0,
+    };
+
+    setCatch(false);
+    setLocalStorage(localStoreCatchs);
+    setLocalStorage(localStoreCatch);
+  }
+
+  function catchOrDropPokermon() {
+    if (Catch) {
+      dropPokemon();
+    } else {
+      catchPokermon();
+    }
+  }
+
   return (
     <>
       {PokemonData && (
         <Container>
           <PokemonDetail>
             <DetailCard>
-              <PokemonImageBox className="active" onClick={() => {}}>
-                <Icon className="far fa-star" />
+              <PokemonImageBox
+                className={Catch && 'active'}
+                onClick={() => catchOrDropPokermon()}
+              >
+                <Icon
+                  className={`${Catch && 'active'} ${
+                    Catch ? 'fas' : 'far'
+                  }   fa-star`}
+                  onClick={() => {}}
+                />
                 <PokemonImage
                   src={PokemonData.sprites.front_default}
                   alt={PokemonData.name}

@@ -14,7 +14,7 @@ export const getLocalStorage = name => {
   }
 
   if (now > storage.expiryTime) {
-    localStorage.clear();
+    localStorage.removeItem(name);
     return false;
   }
   return storage.value;

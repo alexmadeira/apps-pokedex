@@ -2,14 +2,23 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import api from '~/services/api';
+import { getLocalStorage } from '~/services/localStorage';
 
 import LoadImage from '~/assets/img/pokeball-loading.gif';
 
-import { Container, PokeName, ImageBox, PokeId, PokemonImage } from './styles';
+import {
+  Container,
+  PokeName,
+  ImageBox,
+  PokeId,
+  LoadingImage,
+  PokemonImage,
+} from './styles';
 
 function Card({ name }) {
   const [Pokemon, setPokemon] = useState(null);
   const [PokemonLoadImage, setPokemonLoadImage] = useState(false);
+  const [Catch, setCatch] = useState(false);
 
   useEffect(() => {
     const getPokemon = async () => {
@@ -19,22 +28,33 @@ function Card({ name }) {
     getPokemon();
   }, [name]);
 
+  useEffect(() => {
+    if (Pokemon) {
+      const IsCatch = getLocalStorage(
+        `@alex-madeira-pokedex/CATCH/${Pokemon.name}`
+      );
+      setCatch(!!IsCatch);
+    }
+  }, [Pokemon]);
   return (
     <>
       {Pokemon && (
-        <Container to={`/pokemon/${Pokemon.name}`}>
+        <Container to={`/pokemon/${Pokemon.name}`} className={Catch && 'catch'}>
           <PokeName>{Pokemon.name}</PokeName>
 
           <ImageBox>
             <PokeId>#{`00${Pokemon.id}`.slice(-3)}</PokeId>
-            {!PokemonLoadImage && (
-              <PokemonImage src={LoadImage} alt={Pokemon.name} />
-            )}
+
+            <LoadingImage
+              src={LoadImage}
+              alt={Pokemon.name}
+              className={PokemonLoadImage && 'load'}
+            />
 
             <PokemonImage
               onLoad={() => setPokemonLoadImage(true)}
               src={Pokemon.sprites.front_default}
-              alt={Pokemon.name}
+              alt=""
             />
           </ImageBox>
         </Container>

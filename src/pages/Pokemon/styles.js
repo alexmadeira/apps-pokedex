@@ -70,7 +70,7 @@ export const Icon = styled.i`
   font-size: 25px;
   color: #333333;
   opacity: 0.3;
-
+  z-index: 3;
   &:hover:not(.active) {
     opacity: 0.7;
   }
@@ -206,17 +206,6 @@ export const PokemonInfo = styled.div`
   margin: 0 10px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 `;
-
-// export const Title = styled.h3`
-//   text-transform: capitalize;
-//   color: #000;
-//   font-size: 20px;
-//   padding: 15px 20px 10px 20px;
-//   width: 100%;
-//   align-items: stretch;
-//   box-shadow: 0 1px 2px rgba(10, 10, 10, 0.1);
-//   display: flex;
-// `;
 
 export const FeaturesBox = styled.div`
   width: 100%;
