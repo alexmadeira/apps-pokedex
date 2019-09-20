@@ -11,7 +11,7 @@ export const Container = styled(Link)`
   border-radius: 5px;
   margin: 10px;
   min-width: 300px;
-  max-width: calc(50% - 20px);
+  max-width: 100%;
   text-decoration: none;
 
   img {
