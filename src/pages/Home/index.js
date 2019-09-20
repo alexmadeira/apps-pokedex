@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const getPokemonsList = async () => {
-      const reponse = await api.get(`/pokemon/?limit=30&offset=0`);
+      const reponse = await api.get(`pokemon/?limit=30&offset=0`);
       setPokemonsList(reponse.data.results);
     };
     getPokemonsList();
