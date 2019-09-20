@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import api from '~/services/api';
-import { setLocalStorage, getLocalStorage } from '~/services/localStorage';
+import {
+  setLocalStorage,
+  getLocalStorage,
+  removeLocalStorage,
+} from '~/services/localStorage';
 
 import {
   Container,
@@ -72,13 +76,11 @@ function Pokemon({ match: { params } }) {
     const localStoreCatchs = {
       name: '@alex-madeira-pokedex/CATCHS',
       value: [...new Set([...Catchs, PokemonData.name])],
-      expiry: 24 * 60 * 60 * 1000,
     };
 
     const localStoreCatch = {
       name: `@alex-madeira-pokedex/CATCH/${PokemonData.name}`,
-      value: PokemonData.name,
-      expiry: 24 * 60 * 60 * 1000,
+      value: 'Catch',
     };
 
     setCatch(true);
@@ -92,17 +94,11 @@ function Pokemon({ match: { params } }) {
     const localStoreCatchs = {
       name: '@alex-madeira-pokedex/CATCHS',
       value: DropCatch,
-      expiry: 24 * 60 * 60 * 1000,
-    };
-    const localStoreCatch = {
-      name: `@alex-madeira-pokedex/CATCH/${PokemonData.name}`,
-      value: PokemonData.name,
-      expiry: 0,
     };
 
     setCatch(false);
     setLocalStorage(localStoreCatchs);
-    setLocalStorage(localStoreCatch);
+    removeLocalStorage(`@alex-madeira-pokedex/CATCH/${PokemonData.name}`);
   }
 
   function catchOrDropPokermon() {

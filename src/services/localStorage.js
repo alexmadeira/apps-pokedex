@@ -1,21 +1,13 @@
-export const setLocalStorage = ({ name, value, expiry }) => {
-  const now = new Date().getTime();
-  const expiryTime = expiry + now;
-
-  localStorage.setItem(name, JSON.stringify({ value, expiryTime }));
+export const setLocalStorage = ({ name, value }) => {
+  localStorage.setItem(name, JSON.stringify(value));
 };
 
 export const getLocalStorage = name => {
-  const now = new Date().getTime();
   const storage = JSON.parse(localStorage.getItem(name));
 
-  if (!storage) {
-    return false;
-  }
+  return storage;
+};
 
-  if (now > storage.expiryTime) {
-    localStorage.removeItem(name);
-    return false;
-  }
-  return storage.value;
+export const removeLocalStorage = name => {
+  localStorage.removeItem(name);
 };
