@@ -1,26 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-import { Container, Logo, List, ListItem, Icon } from './styles';
+import {
+  Container,
+  Logo,
+  List,
+  ListItem,
+  Icon,
+  Title,
+  SearchBox,
+} from './styles';
 
-function Nav() {
+function Nav({ titlePage, search }) {
   return (
     <Container>
       <Logo to="/" />
       <List>
-        <ListItem className="active">
-          <Link to="/">
+        <ListItem>
+          <NavLink exact activeClassName="active" to="/">
             <Icon className="fas fa-globe-americas" />
-          </Link>
+          </NavLink>
         </ListItem>
         <ListItem>
-          <Link to="/catch">
+          <NavLink exact activeClassName="active" to="/catch">
             <Icon className="fas fa-suitcase" />
-          </Link>
+          </NavLink>
         </ListItem>
       </List>
+      <Title>{titlePage}</Title>
+      <SearchBox>{!!search && <input type="text" />}</SearchBox>
     </Container>
   );
 }
+
+Nav.defaultProps = {
+  search: true,
+};
+
+Nav.propTypes = {
+  titlePage: PropTypes.string.isRequired,
+  search: PropTypes.bool,
+};
 
 export default Nav;

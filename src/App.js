@@ -6,13 +6,11 @@ import GlobalStyle from '~/styles/global';
 
 import '~/config/ReactotronConfig';
 
-import Nav from '~/components/Nav';
-
 function App() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Nav />
+
       <Routes />
     </BrowserRouter>
   );
