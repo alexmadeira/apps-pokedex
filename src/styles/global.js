@@ -11,6 +11,8 @@ export default createGlobalStyle`
 
 html,body,#root{
   height:100%;
+
+
 }
 
 body{
@@ -18,7 +20,8 @@ body{
   -webkit-font-smoothing: antialiased!important;
   background: #fff;
   font-family: 'Orbitron', sans-serif;
-  font-size: 16px;
+  font-size: 16px; max-width: 100vw;
+  overflow-x: hidden;
 }
 
 `;
