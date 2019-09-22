@@ -25,7 +25,7 @@ function Nav({ titlePage, search }) {
   useEffect(() => {
     if (pokemonsFullList) {
       const filerPokemonList = pokemonsFullList.filter(({ name }) => {
-        return name.includes(searchPokemon);
+        return name.includes(searchPokemon.toLowerCase());
       });
       setPokemonsList(filerPokemonList);
     }
