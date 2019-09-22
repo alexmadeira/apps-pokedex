@@ -25,9 +25,9 @@ export const Container = styled(Link)`
       filter: grayscale(0%);
     }
   }
-  @media (max-width: 700px) {
+  /* @media (max-width: 700px) {
     margin: 10px 0;
-  }
+  } */
 `;
 
 export const PokeName = styled.h2`
