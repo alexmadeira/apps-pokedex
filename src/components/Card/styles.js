@@ -10,7 +10,7 @@ export const Container = styled(Link)`
   flex: 1;
   border-radius: 5px;
   margin: 10px;
-  min-width: 300px;
+  min-width: 200px;
   text-decoration: none;
   img {
     filter: grayscale(90%);
