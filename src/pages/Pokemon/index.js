@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import api from '~/services/Api';
+import api from '~/services/api';
 
 import {
   setLocalStorage,
   getLocalStorage,
   removeLocalStorage,
-} from '~/services/LocalStorage';
+} from '~/services/localStorage';
 
 import {
   Container,

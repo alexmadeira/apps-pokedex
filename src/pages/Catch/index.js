@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { getLocalStorage } from '~/services/LocalStorage';
+import { getLocalStorage } from '~/services/localStorage';
 import { PokemonsProvider } from '~/contexts/PokemonsContext';
 
 import { Container } from './styles';

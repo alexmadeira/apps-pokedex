@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import api from '~/services/Api';
+import api from '~/services/api';
 import { PokemonsProvider } from '~/contexts/PokemonsContext';
 
 import { Container } from './styles';

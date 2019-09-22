@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import api from '~/services/Api';
-import { getLocalStorage } from '~/services/LocalStorage';
+import api from '~/services/api';
+import { getLocalStorage } from '~/services/localStorage';
 
 import LoadImage from '~/assets/img/pokeball-loading.gif';
 

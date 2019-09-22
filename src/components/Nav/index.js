@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import { clearLocalStorage, getLocalStorage } from '~/services/LocalStorage';
+import { clearLocalStorage, getLocalStorage } from '~/services/localStorage';
 import PokemonsContext from '~/contexts/PokemonsContext';
 import history from '~/services/history';
 
