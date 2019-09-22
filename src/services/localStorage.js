@@ -11,3 +11,7 @@ export const getLocalStorage = name => {
 export const removeLocalStorage = name => {
   localStorage.removeItem(name);
 };
+
+export const clearLocalStorage = () => {
+  localStorage.clear();
+};

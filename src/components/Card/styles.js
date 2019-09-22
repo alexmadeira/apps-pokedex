@@ -11,9 +11,7 @@ export const Container = styled(Link)`
   border-radius: 5px;
   margin: 10px;
   min-width: 300px;
-  max-width: 100%;
   text-decoration: none;
-
   img {
     filter: grayscale(90%);
   }
@@ -26,6 +24,8 @@ export const Container = styled(Link)`
     img {
       filter: grayscale(0%);
     }
+  }
+  @media (max-width: 700px) {
   }
 `;
 
