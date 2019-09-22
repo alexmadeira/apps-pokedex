@@ -26,6 +26,7 @@ export const Container = styled(Link)`
     }
   }
   @media (max-width: 700px) {
+    margin: 10px 0;
   }
 `;
 
