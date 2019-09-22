@@ -28,6 +28,9 @@ export const Container = styled.nav`
       margin-top: 0 !important;
       margin-right: 0 !important;
       margin-bottom: 15px !important;
+      width: 100%;
+      justify-content: center !important;
+      align-items: center !important;
     }
   }
 `;
@@ -117,6 +120,9 @@ export const SearchBox = styled.div`
     text-align: center;
     border-radius: 3px;
     caret-color: #050;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
     &::placeholder {
       color: #000;
       opacity: 0.5;
