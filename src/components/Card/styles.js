@@ -11,6 +11,7 @@ export const Container = styled(Link)`
   border-radius: 5px;
   margin: 10px;
   min-width: 280px;
+  max-width: 25%;
   text-decoration: none;
   img {
     filter: grayscale(90%);
@@ -25,9 +26,19 @@ export const Container = styled(Link)`
       filter: grayscale(0%);
     }
   }
-  /* @media (max-width: 700px) {
-    margin: 10px 0;
-  } */
+
+  @media (max-width: 1215px) {
+    max-width: 33.33%;
+  }
+  @media (max-width: 1100px) {
+    max-width: 33.33%;
+  }
+  @media (max-width: 915px) {
+    max-width: 50%;
+  }
+  @media (max-width: 615px) {
+    max-width: 100%;
+  }
 `;
 
 export const PokeName = styled.h2`
