@@ -92,7 +92,9 @@ function Pokemon({ match: { params } }) {
   }
 
   function dropPokemon() {
-    const DropCatch = Catchs.filter(pokemon => pokemon !== PokemonData.name);
+    const DropCatch = Catchs.filter(pokemon => {
+      return pokemon.name !== PokemonData.name;
+    });
 
     const localStoreCatchs = {
       name: '@alex-madeira-pokedex/CATCHS',
