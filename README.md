@@ -30,9 +30,9 @@ O projeto vai abrir altomaticamente em [http://localhost:3000/](http://localhost
 
 no projeto utilozo
 ````
-Prettierrc
-Editorconfig
-Eslint
+1. Prettier
+2. Editorconfig
+3. Eslint
 ````
 Seguindo a style guide do [Airbnb](https://github.com/airbnb/javascript "Airbnb").
 
