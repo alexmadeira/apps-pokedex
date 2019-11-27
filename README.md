@@ -1,4 +1,4 @@
-# Pokedex
+# Pokedex  [![Netlify Status](https://api.netlify.com/api/v1/badges/5d26bc2c-5123-45a8-9712-e520c9cf1e15/deploy-status)](https://app.netlify.com/sites/alexmadeira-pokedex/deploys)
 
 Um projeto que desenvolvi para passar o tempo e me divertir 
 
