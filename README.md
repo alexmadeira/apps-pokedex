@@ -1,15 +1,18 @@
 # Pokedex  [![Netlify Status](https://api.netlify.com/api/v1/badges/5d26bc2c-5123-45a8-9712-e520c9cf1e15/deploy-status)](https://app.netlify.com/sites/alexmadeira-pokedex/deploys)
 
-Um projeto que desenvolvi para passar o tempo e me divertir 
+Um projeto que desenvolvi para passar o tempo e me divertir
+
+## Preview
+ [![Pokedex](https://pokedex.alexmadeira.com.br/pokedex-preview.jpg)](https://pokedex.alexmadeira.com.br/)
 
 ## Começando
 
 Estas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de teste.
-Este projeto foi desenvolvido utlizando 
+Este projeto foi desenvolvido utlizando
 
 
 - [ReactJs](https://github.com/facebook/react/ "React js")
-- [PokeApi](https://github.com/PokeAPI/pokeapi "PokeApi") 
+- [PokeApi](https://github.com/PokeAPI/pokeapi "PokeApi")
 
 
 ### Pré-requisitos
@@ -42,10 +45,10 @@ Seguindo a style guide do [Airbnb](https://github.com/airbnb/javascript "Airbnb"
 
 Não há rotina de deploy, utilizo a ferramenta [netlify]("https://www.netlify.com/")
 
-## Autor 
+## Autor
 
 * **Alex Madeira** -  [Bitbucket](https://bitbucket.org/alexmadeira5/)
 
 ## Licença
 
-Esse projeto não tem Licença mas sinta-se a vontade para olhar baixar copiar não tem problema :) 
+Esse projeto não tem Licença mas sinta-se a vontade para olhar baixar copiar não tem problema :)
