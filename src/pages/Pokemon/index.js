@@ -132,10 +132,7 @@ function Pokemon({ match: { params } }) {
                     }   fa-star`}
                     onClick={() => {}}
                   />
-                  <PokemonImage
-                    src={PokemonData.sprites.front_default}
-                    alt={PokemonData.name}
-                  />
+                  <PokemonImage pokemon={PokemonData.name} />
                 </PokemonImageBox>
                 <PokemonId>#{`00${PokemonData.id}`.slice(-3)}</PokemonId>
                 <PokrmonTitle>{PokemonData.name}</PokrmonTitle>

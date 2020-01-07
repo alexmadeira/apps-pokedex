@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
+
 import PropTypes from 'prop-types';
 
 import api from '~/services/api';
 import { getLocalStorage } from '~/services/localStorage';
 
-import LoadImage from '~/assets/img/pokeball-loading.gif';
-
-import {
-  Container,
-  PokeName,
-  ImageBox,
-  PokeId,
-  LoadingImage,
-  PokemonImage,
-} from './styles';
+import { Container, PokeName, ImageBox, PokeId, PokemonImage } from './styles';
 
 function Card({ name }) {
   const [Pokemon, setPokemon] = useState(null);
-  const [PokemonLoadImage, setPokemonLoadImage] = useState(false);
+
   const [Catch, setCatch] = useState(false);
 
   useEffect(() => {
@@ -44,18 +36,7 @@ function Card({ name }) {
 
           <ImageBox>
             <PokeId>#{`00${Pokemon.id}`.slice(-3)}</PokeId>
-
-            <LoadingImage
-              src={LoadImage}
-              alt={Pokemon.name}
-              className={PokemonLoadImage && 'load'}
-            />
-
-            <PokemonImage
-              onLoad={() => setPokemonLoadImage(true)}
-              src={Pokemon.sprites.front_default}
-              alt=""
-            />
+            <PokemonImage pokemon={Pokemon.name} />
           </ImageBox>
         </Container>
       )}

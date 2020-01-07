@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import PokeSprite from 'react-poke-sprites';
 
 const progressAnimate = keyframes`
   from {
@@ -84,8 +85,8 @@ export const Icon = styled.i`
   }
 `;
 
-export const PokemonImage = styled.img`
-  width: 100%;
+export const PokemonImage = styled(PokeSprite)`
+  height: 300px;
 `;
 
 export const PokemonId = styled.em`

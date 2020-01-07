@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PokeSprite from 'react-poke-sprites';
 import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)`
@@ -72,9 +73,9 @@ export const LoadingImage = styled.img`
   }
 `;
 
-export const PokemonImage = styled.img`
-  height: auto;
-  width: 100%;
+export const PokemonImage = styled(PokeSprite)`
+  min-height: 200px;
+  max-width: 100%;
 `;
 
 export const PokeId = styled.em`
